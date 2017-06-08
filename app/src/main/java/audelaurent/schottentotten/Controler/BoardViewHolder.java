@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import audelaurent.schottentotten.R;
 
+import static android.R.attr.id;
+
 /**
  * Created by Aude on 04/06/2017.
  */

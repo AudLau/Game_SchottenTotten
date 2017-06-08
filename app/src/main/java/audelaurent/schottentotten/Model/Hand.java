@@ -17,12 +17,6 @@ public class Hand {
         hand = new ArrayList<>();
         maxCard = 6;
 
-        hand.add(new ClanCard(Color.GRAY, 6));
-        hand.add(new ClanCard(Color.GREEN, 1));
-        hand.add(new ClanCard(Color.BLUE, 2));
-        hand.add(new ClanCard(Color.RED, 3));
-        hand.add(new ClanCard(Color.YELLOW, 6));
-        hand.add(new ClanCard(Color.PURPLE, 5));
     }
 
     public ArrayList<ClanCard> getHand() {
@@ -74,5 +68,11 @@ public class Hand {
         }
         return res;
     }
+
+    public void removeCard(int position){
+        hand.remove(position);
+    }
+
+
 
 }

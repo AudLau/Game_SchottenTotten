@@ -5,6 +5,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static audelaurent.schottentotten.R.id.stack;
+
 /**
  * Created by Aude on 28/05/2017.
  */
@@ -16,6 +18,7 @@ public class Stack {
 
 
     public Stack() {
+        initializeStacks();
     }
 
     public ArrayList<ClanCard> getClanStack() {
@@ -41,13 +44,12 @@ public class Stack {
 
     /**
      * Return the first card on the stack and delete it from the stack
-     * @param stack the stack where to pick a card
      * @return the card picked i.e. the first card on the stack
      */
-    public Card pickCard( ArrayList<? extends Card> stack){
-        if(!stack.isEmpty()){
-            Card temp = stack.get(0);
-            stack.remove(0);
+    public ClanCard pickCard(){
+        if(!clanStack.isEmpty()){
+            ClanCard temp = clanStack.get(0);
+            clanStack.remove(0);
             Log.d(TAG, "card removed:" + temp);
             return temp;
         } else {

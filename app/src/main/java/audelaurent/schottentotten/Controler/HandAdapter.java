@@ -16,6 +16,7 @@ import audelaurent.schottentotten.Model.Game;
 import audelaurent.schottentotten.Model.Hand;
 import audelaurent.schottentotten.R;
 
+import static audelaurent.schottentotten.Model.Color.colorEnum2Int;
 import static audelaurent.schottentotten.R.layout.hand_list;
 
 
@@ -33,12 +34,6 @@ public class HandAdapter extends RecyclerView.Adapter<HandViewHolder>  {
     @Override
     public HandViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(hand_list, parent, false);
-        /*HandClickListener hcl = new HandClickListener();
-        itemView.setOnClickListener(hcl);
-        itemView.setTag(position);
-        itemView.setOnLongClickListener(hcl);
-        //itemView.setOnTouchListener(hcl);
-        itemView.setOnDragListener(hcl);*/
         return new HandViewHolder(itemView);
     }
 
@@ -51,11 +46,9 @@ public class HandAdapter extends RecyclerView.Adapter<HandViewHolder>  {
         HandClickListener hcl = new HandClickListener();
         holder.cardhand.setOnClickListener(hcl);
         holder.cardhand.setOnLongClickListener(hcl);
-        //itemView.setOnTouchListener(hcl);
-        holder.cardhand.setOnDragListener(hcl);
 
         Drawable background = holder.cardhand.getBackground();
-        ((GradientDrawable)background).setColor(ContextCompat.getColor(cont, colorEnum2Int(card.getColor())));
+        ((GradientDrawable)background).setColor(ContextCompat.getColor(cont, Color.colorEnum2Int(card.getColor())));
 
     }
 
@@ -64,22 +57,5 @@ public class HandAdapter extends RecyclerView.Adapter<HandViewHolder>  {
         return hand.getHand().size();
     }
 
-    private int colorEnum2Int(Color c){
-        switch(c){
-            case YELLOW:
-                return R.color.card_yellow;
-            case GRAY:
-                return R.color.card_gray;
-            case GREEN:
-                return R.color.card_green;
-            case RED:
-                return R.color.card_red;
-            case BLUE:
-                return R.color.card_blue;
-            case PURPLE:
-                return R.color.card_purple;
-        }
-        return R.color.card_default;
-    }
 
 }

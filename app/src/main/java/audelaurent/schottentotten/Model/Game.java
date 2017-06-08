@@ -14,6 +14,11 @@ public class Game {
         otherPlayer = new Player(otherPlayerName);
 
         stack = new Stack();
+
+        for(int i = 0; i<thisPlayer.getPlayerHand().getMaxCard(); i++){
+            thisPlayer.getPlayerHand().addCard(stack.pickCard());
+            otherPlayer.getPlayerHand().addCard(stack.pickCard());
+        }
     }
 
     public Player getThisPlayer() {

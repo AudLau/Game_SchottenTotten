@@ -28,7 +28,8 @@
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="@dimen/card_text_size"
-        android:layout_marginEnd="4dp" />
+        android:layout_marginEnd="4dp"
+        android:onClick="onClickStack"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_board"

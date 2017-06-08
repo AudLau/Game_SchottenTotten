@@ -67,6 +67,7 @@ public class BoardAdapter extends RecyclerView.Adapter<BoardViewHolder> {
                         boardDown.getStones().get(tag).addCard(movedCard);
                         holder.carddown1.setBackgroundColor(cont.getColor(colorEnum2Int(movedCard.getColor())));
                         holder.carddown1.setText("" + movedCard.getValue());
+                        holder.carddown1.setVisibility(View.VISIBLE);
 
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:

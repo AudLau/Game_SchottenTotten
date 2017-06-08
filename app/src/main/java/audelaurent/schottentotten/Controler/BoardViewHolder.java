@@ -1,5 +1,6 @@
 package audelaurent.schottentotten.Controler;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ public class BoardViewHolder extends RecyclerView.ViewHolder {
     public TextView carddown1;
     public TextView carddown2;
     public TextView carddown3;
+    public ConstraintLayout constraintLayout;
 
 
     public BoardViewHolder(View view) {
@@ -28,5 +30,6 @@ public class BoardViewHolder extends RecyclerView.ViewHolder {
         carddown1 = (TextView) view.findViewById(R.id.carddown1 );
         carddown2 = (TextView) view.findViewById(R.id.carddown2 );
         carddown3 = (TextView) view.findViewById(R.id.carddown3 );
+        constraintLayout = (ConstraintLayout) view.findViewById(R.id.borneToFight);
     }
 }

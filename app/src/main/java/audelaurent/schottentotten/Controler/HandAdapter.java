@@ -33,12 +33,12 @@ public class HandAdapter extends RecyclerView.Adapter<HandViewHolder>  {
     @Override
     public HandViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(hand_list, parent, false);
-        HandClickListener hcl = new HandClickListener();
+        /*HandClickListener hcl = new HandClickListener();
         itemView.setOnClickListener(hcl);
-        itemView.setTag("abc");
+        itemView.setTag(position);
         itemView.setOnLongClickListener(hcl);
         //itemView.setOnTouchListener(hcl);
-        itemView.setOnDragListener(hcl);
+        itemView.setOnDragListener(hcl);*/
         return new HandViewHolder(itemView);
     }
 
@@ -47,6 +47,13 @@ public class HandAdapter extends RecyclerView.Adapter<HandViewHolder>  {
         Context cont = holder.cardhand.getContext();
         ClanCard card = hand.getHand().get(position);
         holder.cardhand.setText(""+card.getValue());
+        holder.cardhand.setTag(position);
+        HandClickListener hcl = new HandClickListener();
+        holder.cardhand.setOnClickListener(hcl);
+        holder.cardhand.setOnLongClickListener(hcl);
+        //itemView.setOnTouchListener(hcl);
+        holder.cardhand.setOnDragListener(hcl);
+
         Drawable background = holder.cardhand.getBackground();
         ((GradientDrawable)background).setColor(ContextCompat.getColor(cont, colorEnum2Int(card.getColor())));
 

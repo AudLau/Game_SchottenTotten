@@ -34,7 +34,7 @@ public class HandClickListener implements View.OnClickListener, View.OnLongClick
         // Create a new ClipData using the tag as a label, the plain text MIME type, and
         // the already-created item. This will create a new ClipDescription object within the
         // ClipData, and set its MIME type entry to "text/plain"
-        ClipData dragData = new ClipData((CharSequence)v.getTag(), new String[]{ ClipDescription.MIMETYPE_TEXT_PLAIN } , item);
+        ClipData dragData = new ClipData((CharSequence)v.getTag().toString(), new String[]{ ClipDescription.MIMETYPE_TEXT_PLAIN } , item);
 
         // Instantiates the drag shadow builder.
         View.DragShadowBuilder myShadow = new View.DragShadowBuilder(v);

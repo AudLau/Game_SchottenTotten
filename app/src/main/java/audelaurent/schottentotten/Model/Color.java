@@ -13,17 +13,17 @@ public enum Color {
     public static int colorEnum2Int(Color c) {
         switch (c) {
             case YELLOW:
-                return R.color.card_yellow;
+                return R.drawable.card_shape_yellow;
             case GRAY:
-                return R.color.card_gray;
+                return R.drawable.card_shape_grey;
             case GREEN:
-                return R.color.card_green;
+                return R.drawable.card_shape_green;
             case RED:
-                return R.color.card_red;
+                return R.drawable.card_shape_red;
             case BLUE:
-                return R.color.card_blue;
+                return R.drawable.card_shape_blue;
             case PURPLE:
-                return R.color.card_purple;
+                return R.drawable.card_shape_purple;
         }
         return R.color.card_default;
     }

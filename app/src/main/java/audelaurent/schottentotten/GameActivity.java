@@ -54,7 +54,8 @@ public class GameActivity extends AppCompatActivity {
             ClanCard movedCard = game.getThisPlayer().getPlayerHand().getHand().get(pos);
             game.getThisPlayer().getPlayerBoard().getStones().get(stone).addCard(movedCard);
             game.getThisPlayer().getPlayerHand().removeCard(pos);
-            adaptBoard.notifyDataSetChanged();
+            adaptBoard.notifyItemChanged(stone);
+            //adaptBoard.notifyDataSetChanged();
             adaptHand.notifyDataSetChanged();
         } else {
             Toast.makeText(this, "This Stone is full", Toast.LENGTH_SHORT).show();

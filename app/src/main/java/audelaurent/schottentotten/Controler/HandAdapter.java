@@ -41,14 +41,15 @@ public class HandAdapter extends RecyclerView.Adapter<HandViewHolder>  {
     public void onBindViewHolder(HandViewHolder holder, int position) {
         Context cont = holder.cardhand.getContext();
         ClanCard card = hand.getHand().get(position);
-        holder.cardhand.setText(""+card.getValue());
+        holder.cardhand.setText(String.valueOf(card.getValue()));
         holder.cardhand.setTag(position);
         HandClickListener hcl = new HandClickListener();
         holder.cardhand.setOnClickListener(hcl);
         holder.cardhand.setOnLongClickListener(hcl);
 
         Drawable background = holder.cardhand.getBackground();
-        ((GradientDrawable)background).setColor(ContextCompat.getColor(cont, Color.colorEnum2Int(card.getColor())));
+        holder.cardhand.setBackground(cont.getDrawable(Color.colorEnum2Int(card.getColor())));
+
 
     }
 
